@@ -36,7 +36,34 @@ var ewwCelery = prompt('Is celery the worst food on the planet? Yes or No').toLo
   } else{
     alert('Yes or no are still the best answers here.');
   }
-  
+
 // 4. Have i visited more than 10 countries y/n
+var visitNum = prompt('Have I visited more than 10 countries? Yes or No only.').toLowerCase();
+  if(visitNum === 'yes'){
+    alert('Correct! I can show you the world, Shining, shimmering splendid!');
+  } else if (visitNum === 'no'){
+    alert('Incorrect! I\'ve been There and Back Again');
+  } else{
+    alert('I really thought 3rd time would be the charm. Yes or no would suffice');
+  }
+
+
 // 5. am i from seattle y/n
-// 6. Do you like celery? y/n
+var fromSeattle = prompt('Am I from Seattle? Yes or no.').toLowerCase();
+  if(fromSeattle === 'no'){
+    alert('That\'s Right! Born and raised in Alaska');
+  } else if(fromSeattle === 'yes'){
+    alert('Not quite. Grew up further north in Alaska.');
+  } else{
+    alert('One more question to try yes or no.');
+  }
+
+// 6. have i seen over 100 musical artists perform in a single year?
+var concertCount = prompt('Have I seen over 100 musical artists perform in a single year? Yes or No?').toLowerCase();
+  if(concertCount === 'yes'){
+    alert('You guessed it! What a year it was!');
+  } else if(concertCount === 'no'){
+    alert('Sorry, you guessed incorrectly.');
+  } else{
+    alert('Hint: hit F5 or Ctrl + R');
+  }
