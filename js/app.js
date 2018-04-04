@@ -1,5 +1,7 @@
 'use strict';
 
+var correctAns = 0;
+
 confirm('Are you ready to play the guessing game?');
 //questions to ask for the code
 
@@ -10,6 +12,7 @@ if (pName !== null){
   alert('Let\'s get this quiz started, ' +pName);
 }
 
+// 1. guess my age
 var myAge = 28;
 var guessAge = prompt('How old am I? Hint: 20-35');
 console.log(guessAge);
@@ -17,6 +20,7 @@ var intAge = parseInt(guessAge);
 
 if(intAge === myAge){
   alert('Spot on! I\'m 28.');
+  correctAns++;
 } else if(intAge > myAge){
   alert('Not yet, I\'m 28');
 } else{
@@ -28,6 +32,7 @@ var downhillRec = prompt('Do I like snowboarding more than skiing? Yes or No?').
 console.log(downhillRec);
 if(downhillRec === 'no'){
   alert('You\'re correct! I enjoy both, but prefer skiing!');
+  correctAns++;
 } else if(downhillRec === 'yes'){
   alert('While I enjoy both, I prefer skiing over snowboarding.');
 } else{
@@ -40,6 +45,7 @@ var ewwCelery = prompt('Is celery the worst food on the planet? Yes or No').toLo
 console.log(ewwCelery);
 if(ewwCelery === 'yes'){
   alert('I wholeheartedly agree. And you are correct!');
+  correctAns++;
 } else if(ewwCelery === 'no'){
   alert('That\'s just like, your opinion, man.');
 } else{
@@ -51,6 +57,7 @@ var visitNum = prompt('Have I visited more than 10 countries? Yes or No only.').
 console.log(visitNum);
 if(visitNum === 'yes'){
   alert('Correct! I can show you the world, Shining, shimmering splendid!');
+  correctAns++;
 } else if (visitNum === 'no'){
   alert('Incorrect! I\'ve been There and Back Again');
 } else{
@@ -63,6 +70,7 @@ var fromSeattle = prompt('Am I from Seattle? Yes or no.').toLowerCase();
 console.log(fromSeattle);
 if(fromSeattle === 'no'){
   alert('That\'s Right! Born and raised in Alaska');
+  correctAns++;
 } else if(fromSeattle === 'yes'){
   alert('Not quite. Grew up further north in Alaska.');
 } else{
@@ -74,13 +82,14 @@ var concertCount = prompt('Have I seen over 100 musical artists perform in a sin
 console.log(concertCount);
 if(concertCount === 'yes'){
   alert('You guessed it! What a year it was!');
+  correctAns++;
 } else if(concertCount === 'no'){
   alert('Sorry, you guessed incorrectly.');
 } else{
   alert('Hint: hit F5 or Ctrl + R');
 }
 
-// can you guess any of my favorite video games I currently play (array)
+// 7. can you guess any of my favorite video games I currently play (array)
 
 var favGames = ['dota', 'pubg', 'ssbm', 'rocket league', 'sot' , 'sea of thieves'];
 var anIndex = -1;
@@ -96,9 +105,12 @@ do{
   }
   if(anIndex>-1){
     alert('One of my favorites!');
+    correctAns++;
   } else{
     alert('Try again.');
     tryCount++;
   }
 }
 while(anIndex===-1 && tryCount <= 4);
+
+alert('Quiz finished, ' +pName+ '. You got ' +correctAns+ ' out of 7 questions correct!');
