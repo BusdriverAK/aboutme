@@ -2,8 +2,14 @@
 
 confirm('Are you ready to play the guessing game?');
 //questions to ask for the code
-// 1. How old am I
-/* run loop until user get's correct age. 3 outcomes correct, under, and over */
+
+// prompt user for name
+var pName = prompt('Firstly, what is your name?');
+console.log(pName);
+if (pName !== null){
+  alert('Let\'s get this quiz started, ' +pName);
+}
+
 var myAge = 28;
 var guessAge = prompt('How old am I? Hint: 20-35');
 console.log(guessAge);
@@ -72,4 +78,18 @@ if(concertCount === 'yes'){
   alert('Sorry, you guessed incorrectly.');
 } else{
   alert('Hint: hit F5 or Ctrl + R');
+}
+
+// can you guess any of my favorite video games I currently play (array)
+
+var favGames = ['dota', 'pubg', 'ssbm', 'rocket league', 'sot' , 'sea of thieves'];
+var ansGames = prompt(pName + ' can you guess any of my current favorite video games? TIP: Use acronyms when possible').toLowerCase();
+
+for(var i=0; i < favGames.length; i++){
+  if(ansGames === favGames[i]){
+    alert('One of my favorites!');
+    break;
+  } else{
+    alert('Try again.');
+  }
 }
