@@ -83,13 +83,22 @@ if(concertCount === 'yes'){
 // can you guess any of my favorite video games I currently play (array)
 
 var favGames = ['dota', 'pubg', 'ssbm', 'rocket league', 'sot' , 'sea of thieves'];
-var ansGames = prompt(pName + ' can you guess any of my current favorite video games? TIP: Use acronyms when possible').toLowerCase();
+var anIndex = -1;
+var tryCount = 0;
 
-for(var i=0; i < favGames.length; i++){
-  if(ansGames === favGames[i]){
+do{
+  var ansGame = prompt('Can you guess any of my current favorite video games in 5 tries or less? TIP: Use acronyms.').toLowerCase();
+  for (var i=0; i < favGames.length; i++){
+    if(favGames[i]===ansGame){
+      anIndex = i;
+      break;
+    }
+  }
+  if(anIndex>-1){
     alert('One of my favorites!');
-    break;
   } else{
     alert('Try again.');
+    tryCount++;
   }
 }
+while(anIndex===-1 && tryCount <= 4);
